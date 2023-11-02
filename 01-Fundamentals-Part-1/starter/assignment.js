@@ -57,7 +57,7 @@ if (language === "English" && population < 50000000 && !isIsland) {
   console.log(`${country} does not meet your criteria 😔`);
 }
 
-// Switch Statement
+//// Switch Statement
 
 switch (language) {
   case "chinese":
@@ -77,3 +77,9 @@ switch (language) {
     console.log("Great language too 😁");
     break;
 }
+
+//// Ternary Operator
+
+console.log(
+  `${country}'s population is ${population > 33 ? "above" : "below"} average`
+);
