@@ -162,3 +162,37 @@ const shivam = {
 };
 
 console.log(shivam);
+console.log(shivam.lastName); // Dot operator
+
+console.log(shivam["firstName"]); // Bracket
+const nameKey = "Name";
+
+console.log(shivam["first" + nameKey]);
+console.log(shivam["last" + nameKey]);
+
+const interestedIn = prompt(
+  "What do you want to know about shivem? Choose between firstName, lastName, age, job and friends"
+);
+
+console.log(shivam.interestedIn); // undefinded
+
+if (shivam[interestedIn]) {
+  console.log(shivam[interestedIn]);
+} else {
+  console.log(
+    "Wrong request.! Choose between firstName, lastName, age, job and friends "
+  );
+}
+
+// Dot notation to add new value to object
+
+shivam.location = "India";
+shivam["github"] = "shivam-22";
+console.log(shivam);
+
+// Challenge
+// "Shivam has 3 friends and his best friends is called Michael"
+
+console.log(
+  `${shivam.firstName} has ${shivam.friends.length} friends, and his best friend is called ${shivam.friends[0]}`
+);
