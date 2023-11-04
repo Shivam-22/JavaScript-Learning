@@ -79,49 +79,74 @@
 
 //// Arrays
 
-const friends = ["Michael", "Steven", "Peter"];
-console.log(friends);
+// const friends = ["Michael", "Steven", "Peter"];
+// console.log(friends);
 
-const y = new Array(1991, 1984, 2008, 2020);
-console.log(y);
+// const y = new Array(1991, 1984, 2008, 2020);
+// console.log(y);
 
-console.log(friends[0]);
-console.log(friends[2]);
-console.log(friends.length);
-console.log(friends[friends.length - 1]);
+// console.log(friends[0]);
+// console.log(friends[2]);
+// console.log(friends.length);
+// console.log(friends[friends.length - 1]);
 
-friends[2] = "Jay";
-console.log(friends);
+// friends[2] = "Jay";
+// console.log(friends);
 
 //// Only Primitive data types are constant and immutable. Others are mutable. So we were able to change the value of Peter to Jay. What we cannot do is change complete array as shown below. That will throw illegal expression.
 //// friends = ["Bob", "Alice"]; Illegal expression
 
-const jonas = [
-  "Shivam",
-  " Deshmukh",
-  2037 - 1994,
-  "Software Engineer",
-  friends,
-];
-console.log(jonas);
-console.log(jonas.length);
+// const jonas = [
+//   "Shivam",
+//   " Deshmukh",
+//   2037 - 1994,
+//   "Software Engineer",
+//   friends,
+// ];
+// console.log(jonas);
+// console.log(jonas.length);
 
-const calcAge = function (birthYear) {
-  return 2037 - birthYear;
-};
+// const calcAge = function (birthYear) {
+//   return 2037 - birthYear;
+// };
 
-const years = [1990, 1967, 2002, 2010, 2018];
+// const years = [1990, 1967, 2002, 2010, 2018];
 
-const age1 = calcAge(years[0]);
-const age2 = calcAge(years[1]);
-const age3 = calcAge(years[years.length - 1]);
+// const age1 = calcAge(years[0]);
+// const age2 = calcAge(years[1]);
+// const age3 = calcAge(years[years.length - 1]);
 
-console.log(age1, age2, age3);
+// console.log(age1, age2, age3);
 
-const ages = [
-  calcAge(years[0]),
-  calcAge(years[1]),
-  calcAge(years[years.length - 1]),
-];
+// const ages = [
+//   calcAge(years[0]),
+//   calcAge(years[1]),
+//   calcAge(years[years.length - 1]),
+// ];
 
-console.log(ages);
+// console.log(ages);
+
+//// Basic Array Operations
+
+const friends = ["Michael", "Steven", "Peter"];
+
+//Add elements
+const newLenght = friends.push("Jay"); // Adds element at end of the array
+console.log(friends);
+console.log(newLenght);
+
+friends.unshift("John"); // Adds element at the start of the Array
+console.log(friends);
+
+//Remove Element
+const popElement = friends.pop(); // Removes the last element from Array
+console.log(friends);
+console.log(popElement);
+
+friends.shift(); // Removes the first element from Array
+console.log(friends);
+
+console.log(friends.indexOf("Steven")); //gives index of value
+console.log(friends.indexOf("Bob"));
+console.log(friends.includes("Steven")); // returns true or false
+console.log(friends.includes("Bob")); // checks for strict equality
