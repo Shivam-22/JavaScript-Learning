@@ -128,25 +128,37 @@
 
 //// Basic Array Operations
 
-const friends = ["Michael", "Steven", "Peter"];
+//const friends = ["Michael", "Steven", "Peter"];
 
 //Add elements
-const newLenght = friends.push("Jay"); // Adds element at end of the array
-console.log(friends);
-console.log(newLenght);
+// const newLenght = friends.push("Jay"); // Adds element at end of the array
+// console.log(friends);
+// console.log(newLenght);
 
-friends.unshift("John"); // Adds element at the start of the Array
-console.log(friends);
+// friends.unshift("John"); // Adds element at the start of the Array
+// console.log(friends);
 
 //Remove Element
-const popElement = friends.pop(); // Removes the last element from Array
-console.log(friends);
-console.log(popElement);
+// const popElement = friends.pop(); // Removes the last element from Array
+// console.log(friends);
+// console.log(popElement);
 
-friends.shift(); // Removes the first element from Array
-console.log(friends);
+// friends.shift(); // Removes the first element from Array
+// console.log(friends);
 
-console.log(friends.indexOf("Steven")); //gives index of value
-console.log(friends.indexOf("Bob"));
-console.log(friends.includes("Steven")); // returns true or false
-console.log(friends.includes("Bob")); // checks for strict equality
+// console.log(friends.indexOf("Steven")); //gives index of value
+// console.log(friends.indexOf("Bob"));
+// console.log(friends.includes("Steven")); // returns true or false
+// console.log(friends.includes("Bob")); // checks for strict equality
+
+//// Objects
+//Object literal Syntax
+const shivam = {
+  firstName: "Shivam",
+  lastName: "Deshmukh",
+  age: 2037 - 1994,
+  job: "Software Engineer",
+  friends: ["Michael", "Steven", "Peter"],
+};
+
+console.log(shivam);
