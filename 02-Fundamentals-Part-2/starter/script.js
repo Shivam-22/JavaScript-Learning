@@ -198,7 +198,7 @@
 // );
 
 //// Objects Methods
-
+/*
 const shivam = {
   firstName: "Shivam",
   lastName: "Deshmukh",
@@ -232,3 +232,22 @@ console.log(shivam.age); // It will calculate age once and then we will just ret
 console.log(shivam.age);
 console.log(shivam.age);
 console.log(shivam.getSummary());
+*/
+
+//// Iteration the for loop
+
+// console.log("Lifting weight repetition 1 🏋️");
+// console.log("Lifting weight repetition 2 🏋️");
+// console.log("Lifting weight repetition 3 🏋️");
+// console.log("Lifting weight repetition 4 🏋️");
+// console.log("Lifting weight repetition 5 🏋️");
+// console.log("Lifting weight repetition 6 🏋️");
+// console.log("Lifting weight repetition 7 🏋️");
+// console.log("Lifting weight repetition 8 🏋️");
+// console.log("Lifting weight repetition 9 🏋️");
+// console.log("Lifting weight repetition 10 🏋️");
+
+// for loop keeps running while condition is TRUE
+for (let rep = 1; rep <= 10; rep++) {
+  console.log(`Lifting weight repetition ${rep} 🏋️`);
+}
