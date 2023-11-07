@@ -302,3 +302,23 @@ for (let i = 0; i < shivam.length; i++) {
   console.log(shivam[i], typeof shivam[i]);
 }
 */
+
+// Looping backwards
+
+const shivam = [
+  "Shivam",
+  "Deshmukh",
+  2037 - 1994,
+  "Software Engineer",
+  ["Michael", "Steven", "Peter"],
+];
+
+for (let i = shivam.length - 1; i >= 0; i--) {
+  console.log(i, shivam[i]);
+}
+
+for (let exercise = 1; exercise <= 3; exercise++) {
+  for (let rep = 1; rep <= 5; rep++) {
+    console.log(`Exercise ${exercise} : Lifting weight repetition ${rep}`);
+  }
+}
