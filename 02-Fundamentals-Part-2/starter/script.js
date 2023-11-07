@@ -303,22 +303,43 @@ for (let i = 0; i < shivam.length; i++) {
 }
 */
 
-// Looping backwards
+// // Looping backwards
 
-const shivam = [
-  "Shivam",
-  "Deshmukh",
-  2037 - 1994,
-  "Software Engineer",
-  ["Michael", "Steven", "Peter"],
-];
+// const shivam = [
+//   "Shivam",
+//   "Deshmukh",
+//   2037 - 1994,
+//   "Software Engineer",
+//   ["Michael", "Steven", "Peter"],
+// ];
 
-for (let i = shivam.length - 1; i >= 0; i--) {
-  console.log(i, shivam[i]);
+// for (let i = shivam.length - 1; i >= 0; i--) {
+//   console.log(i, shivam[i]);
+// }
+
+// for (let exercise = 1; exercise <= 3; exercise++) {
+//   for (let rep = 1; rep <= 5; rep++) {
+//     console.log(`Exercise ${exercise} : Lifting weight repetition ${rep}`);
+//   }
+// }
+
+//// While Loop
+for (let rep = 1; rep <= 10; rep++) {
+  console.log(`Lifting weight repetition ${rep} 🏋️`);
+}
+let rep = 1;
+while (rep <= 10) {
+  console.log(`WHILE : Lifting weight repetition ${rep} 🏋️`);
+  rep++;
 }
 
-for (let exercise = 1; exercise <= 3; exercise++) {
-  for (let rep = 1; rep <= 5; rep++) {
-    console.log(`Exercise ${exercise} : Lifting weight repetition ${rep}`);
+let dice = Math.trunc(Math.random() * 6) + 1;
+console.log(dice);
+
+while (dice !== 6) {
+  console.log(`you rolled a ${dice}`);
+  dice = Math.trunc(Math.random() * 6) + 1;
+  if (dice === 6) {
+    console.log("Loop is about to end...");
   }
 }
