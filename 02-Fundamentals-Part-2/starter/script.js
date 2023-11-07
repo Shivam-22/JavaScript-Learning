@@ -248,6 +248,57 @@ console.log(shivam.getSummary());
 // console.log("Lifting weight repetition 10 🏋️");
 
 // for loop keeps running while condition is TRUE
-for (let rep = 1; rep <= 10; rep++) {
-  console.log(`Lifting weight repetition ${rep} 🏋️`);
+// for (let rep = 1; rep <= 10; rep++) {
+//   console.log(`Lifting weight repetition ${rep} 🏋️`);
+// }
+
+//// Looping Arrays
+/*
+// Fetching value from Array
+const shivam = [
+  "Shivam",
+  " Deshmukh",
+  2037 - 1994,
+  "Software Engineer",
+  ["Michael", "Steven", "Peter"],
+  true,
+];
+
+for (let i = 0; i < shivam.length; i++) {
+  console.log(shivam[i], typeof shivam[i]);
 }
+
+// Inserting value to Array
+
+const types = [];
+
+for (let i = 0; i < shivam.length; i++) {
+  // Filling  types Array
+  // types[i] = typeof shivam[i];
+
+  types.push(typeof shivam[i]);
+}
+
+console.log(types);
+
+const years = [1991, 2007, 1969, 2020];
+const ages = [];
+for (let i = 0; i < years.length; i++) {
+  ages.push(2037 - years[i]);
+}
+console.log(ages);
+
+//// Continue and Break Statement
+
+console.log("--- ONLY STRINGS ---");
+for (let i = 0; i < shivam.length; i++) {
+  if (typeof shivam[i] !== "string") continue;
+  console.log(shivam[i], typeof shivam[i]);
+}
+
+console.log("--- BREAK AFTER NUMBER ---");
+for (let i = 0; i < shivam.length; i++) {
+  if (typeof shivam[i] === "number") break;
+  console.log(shivam[i], typeof shivam[i]);
+}
+*/
