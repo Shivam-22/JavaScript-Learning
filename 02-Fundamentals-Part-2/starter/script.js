@@ -324,6 +324,7 @@ for (let i = 0; i < shivam.length; i++) {
 // }
 
 //// While Loop
+/*
 for (let rep = 1; rep <= 10; rep++) {
   console.log(`Lifting weight repetition ${rep} 🏋️`);
 }
@@ -343,3 +344,4 @@ while (dice !== 6) {
     console.log("Loop is about to end...");
   }
 }
+*/
