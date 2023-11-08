@@ -88,7 +88,6 @@ neighbours[countryIndex] = "Spain";
 console.log(neighbours);
 
 //// Objects
-
 const myCountry = {
   country: "India",
   capital: "Delhi",
@@ -108,7 +107,6 @@ const myCountry = {
 console.log(myCountry);
 
 //// Dot vs Bracket Notation
-
 console.log(
   `${myCountry.country} has ${myCountry.population} million using ${myCountry.language}-speaking people, ${myCountry.neighbours.length} neighbouring countries and a capital called ${myCountry.capital}`
 );
@@ -119,17 +117,14 @@ myCountry["population"] -= 2;
 console.log(myCountry.population);
 
 //// Object Methods
-
 myCountry.descibe();
 myCountry.checkIsland();
 console.log(myCountry);
 
 //// FOR Loop
-
 for (let i = 1; i <= 50; i++) {
   console.log(`Voter number ${i} is currently voting.`);
 }
-
 //// Looping Arrays, Breaking and Continue
 const populations1 = [1500, 1400, 1000, 700];
 const percentage2 = [];
