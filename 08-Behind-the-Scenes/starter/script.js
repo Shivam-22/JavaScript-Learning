@@ -131,3 +131,65 @@ jonas.calcAge();
 const f = jonas.calcAge;
 console.log(f);
 */
+
+const shivam = {
+  firstName: 'shivam',
+  year: 1991,
+  calcAge: function () {
+    console.log(this);
+    console.log(2037 - this.year);
+  },
+  //! Arrow function does not get its own this keyword
+  greet: () => console.log(`Hey ${this.firstName}`),
+};
+shivam.greet();
+
+const jonas = {
+  firstName: 'Jonas',
+  year: 1991,
+  calcAge: function () {
+    console.log(this);
+    console.log(2037 - this.year);
+
+    //! preseving this keyword - Solution 1
+    // const self = this;
+    // const isMillenial = function () {
+    //   ! this keyword will be undefined here
+    //   ! since its a regular a regular function call and its undefined.
+    //   //console.log(this);
+    //   //console.log(this.year >= 1981 && this.year <= 1996);
+    //   ! We preseve the this keyword as part of above storing this in self.
+    //   console.log(self);
+    //   console.log(self.year >= 1981 && self.year <= 1996);
+    // };
+
+    //! Solution 2
+    //! Arrow function uses the this keyword of its parent and in our case its Jonas object
+    const isMillenial = () => {
+      console.log(this);
+      console.log(this.year >= 1981 && this.year <= 1996);
+    };
+    isMillenial();
+  },
+  //! Arrow function does not get its own this keyword
+  greet: () => console.log(`Hey ${this.firstName}`),
+};
+jonas.greet();
+jonas.calcAge();
+
+//argument keyword
+const addExpr = function (a, b) {
+  console.log(arguments);
+  return a + b;
+};
+addExpr(2, 5);
+//? We can add more arguments, its definatly fine.
+addExpr(2, 3, 4, 21, 14);
+
+//! argument keywords exist in regular function not in arrow function
+var addArrow = (a, b) => {
+  console.log(arguments);
+  return a + b;
+};
+
+addArrow(2, 3);
