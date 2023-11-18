@@ -89,4 +89,45 @@ const z = 3;
 console.log(x === window.x);
 console.log(y === window.y);
 console.log(z === window.z);
+
+// 'this' Keyword
+
+//! this keyword in global scope is simply window object
+console.log(this);
+
+const calcAge = function (birthYear) {
+    console.log(2023 - birthYear);
+    //! In strict mode the this keyword is undefined and in sloppy mode it will be again global object.
+    //! regular call means the function is not attached to any object.
+    console.log(this);
+};
+calcAge(1991);
+
+const calcAgeArrow = birthYear => {
+    console.log(2023 - birthYear);
+    //! Arrow function does not get its own this keyword. It gets from parent which is global
+    console.log(this);
+};
+calcAgeArrow(1980);
+
+const shivam = {
+    year: 1991,
+    calcAge: function () {
+        //! When we have method call the this keyword inside the method will be the object that is calling the method.
+        console.log(this);
+        console.log(2037 - this.year);
+    },
+};
+
+shivam.calcAge();
+
+const jonas = {
+    year: 2017,
+};
+
+jonas.calcAge = shivam.calcAge; //! Method borrowing
+jonas.calcAge();
+
+const f = jonas.calcAge;
+console.log(f);
 */
