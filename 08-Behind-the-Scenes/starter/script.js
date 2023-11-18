@@ -213,7 +213,6 @@ friend.age = 27;
 console.log('Friend:', friend); //! both will have age as 27
 console.log('Me:', me);
 
-*/
 
 //! Primitive Types
 let lastName = 'Williams';
@@ -223,9 +222,9 @@ console.log(lastName, oldLastName);
 
 //! Reference Type
 const jessica = {
-  firstName: 'Jessica',
-  lastName: ' Williams',
-  age: 27,
+    firstName: 'Jessica',
+    lastName: ' Williams',
+    age: 27,
 };
 
 const marriedJessica = jessica;
@@ -238,10 +237,10 @@ console.log('After Marriage:', marriedJessica);
 
 //! Coping Objects
 const jessica2 = {
-  firstName: 'Jessica',
-  lastName: ' Williams',
-  age: 27,
-  family: ['Alice', 'Bob'],
+    firstName: 'Jessica',
+    lastName: ' Williams',
+    age: 27,
+    family: ['Alice', 'Bob'],
 };
 
 //! This is a shallow copy. it will only create copy upto 1 level
@@ -256,3 +255,5 @@ jessicaCopy.family.push('John');
 
 console.log('Before Marriage:', jessica2); //! Both will have family of 4 members
 console.log('After Marriage:', jessicaCopy); //! Both will have family of 4 members
+
+*/
