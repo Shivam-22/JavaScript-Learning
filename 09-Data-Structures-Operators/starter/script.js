@@ -11,10 +11,6 @@ const restaurant = {
   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
-  order: function (starterIndex, mainIndex) {
-    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
-  },
-
   openingHours: {
     thu: {
       open: 12,
@@ -29,9 +25,62 @@ const restaurant = {
       close: 24,
     },
   },
+  order: function (starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
+  orderDelivery: function ({ starterIndex, mainIndex, time, address }) {
+    console.log(
+      `Order Received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]}, will be delivered to ${address} at ${time}`
+    );
+  },
 };
 
 /*
+  restaurant.orderDelivery({
+  time: '22:30',
+  address: 'GIDC, Ankleshwar',
+  mainIndex: 2,
+  starterIndex: 2,
+});
+
+//! Destructuring Objects
+//? variable names are same as property name.
+const { name, openingHours, categories } = restaurant;
+console.log(name, openingHours, categories);
+
+//? variable name is different than property name.
+const {
+  name: restaurantName,
+  openingHours: hours,
+  categories: tags,
+} = restaurant;
+console.log(restaurantName, hours, tags);
+
+//! Default values to object destructuring
+const { menu = [], starterMenu: starters = [] } = restaurant;
+console.log(menu, starters);
+
+//! mutate the variable
+let a = 111;
+let b = 999;
+const obj = { a: 23, b: 7, c: 14 };
+
+({ a, b } = obj);
+console.log(a, b);
+
+//! Nested Object destructuring
+// const { fri } = openingHours; //? This will destructure the nested object
+// console.log(fri);
+// const {
+//   fri: { open, close },
+// } = openingHours;
+// console.log(open, close); //? This will further destructure the object.
+
+const {
+  fri: { open: o, close: c },
+} = openingHours;
+console.log(o, c); //? Given name as per convience.
+
 //! Destructuring Array
 const arr = [2, 3, 4];
 const [x, y, z] = arr; //! It is not an array. Its just destructuring of an array.
