@@ -33,9 +33,61 @@ const restaurant = {
       `Order Received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]}, will be delivered to ${address} at ${time}`
     );
   },
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(
+      `Here is your delicous pasta with ${ing1}, ${ing2} and ${ing3}`
+    );
+  },
 };
 
 /*
+//! Spread Operator
+const arr = [7, 8, 9];
+const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
+console.log(badNewArr); //? old approach
+
+const newArr = [1, 2, ...arr]; //todo: Takes out all element and put it in new array
+console.log(newArr);
+
+console.log(...newArr); //todo: writes element individually
+
+const newMenu = [...restaurant.mainMenu, 'Palak Paneer', 'Chicken Handi'];
+console.log(newMenu);
+
+//! shallow copy array
+const mainMenuCopy = [...restaurant.mainMenu];
+
+//! Join 2 arrays
+const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];
+console.log(menu);
+
+//todo: Iterables: arrays, strings,maps,sets. Not Objects.
+const str = 'Shivam';
+const letters = [...str, ' ', 'D.'];
+console.log(letters);
+console.log(...str);
+
+// const ingredients = [
+//   prompt("let's make pasta! Ingredient 1?"),
+//   prompt('Ingredient 2?'),
+//   prompt('Ingredient 3?'),
+// ];
+
+// console.log(ingredients);
+
+// restaurant.orderPasta(ingredients[0], ingredients[1], ingredients[2]);
+// restaurant.orderPasta(...ingredients);
+
+// Objects
+const newRestaurant = { founded: 1998, ...restaurant, founder: 'Jonas' };
+console.log(newRestaurant);
+
+const restaurantCopy = { ...restaurant };
+restaurantCopy.name = 'Raama';
+console.log(restaurantCopy.name);
+console.log(restaurant.name);
+
+//! ////////////////////////////////////////////////////////////
   restaurant.orderDelivery({
   time: '22:30',
   address: 'GIDC, Ankleshwar',
