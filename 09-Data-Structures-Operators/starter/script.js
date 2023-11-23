@@ -252,7 +252,6 @@ if (restaurant.orderPizza) {
 
 restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
 
-*/
 
 //! Nullish Coalescing Operator
 restaurant.numGuests = 0;
@@ -262,3 +261,40 @@ console.log(guest);
 //? Nullish values are : Null and undefined (Not 0 or '')
 const guessCorrect = restaurant.numGuests ?? 10;
 console.log(guessCorrect);
+
+*/
+
+//! Logical Assignment Operator
+
+const rest1 = {
+  name: 'Capri',
+  //numGuest: 20,
+  numGuest: 0,
+};
+const rest2 = {
+  name: 'Lapiazza',
+  owner: 'giovanni Rossi',
+};
+
+//? OR assignment operator
+// rest1.numGuest = rest1.numGuest || 10;
+// rest2.numGuest = rest2.numGuest || 10;
+
+// rest1.numGuest ||= 10;
+// rest2.numGuest ||= 10; //* If value is falsy then it will print 10. For example if we keep numGuest as 0. Its falsy.
+
+rest1.numGuest ??= 10;
+rest2.numGuest ??= 10;
+
+console.log(rest1);
+console.log(rest2);
+
+//? AND assignment operator
+// rest1.owner = rest1.owner && '<ANONYMOUS>';
+// rest2.owner = rest2.owner && '<ANONYMOUS>';
+
+rest1.owner &&= '<ANONYMOUS>';
+rest2.owner &&= '<ANONYMOUS>';
+
+console.log(rest2);
+console.log(rest1);
