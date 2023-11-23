@@ -262,7 +262,6 @@ console.log(guest);
 const guessCorrect = restaurant.numGuests ?? 10;
 console.log(guessCorrect);
 
-*/
 
 //! Logical Assignment Operator
 
@@ -298,3 +297,25 @@ rest2.owner &&= '<ANONYMOUS>';
 
 console.log(rest2);
 console.log(rest1);
+
+
+//! For of loop
+
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+console.log(menu);
+
+for (const item of menu) console.log(item);
+
+//? Getting current index in for of loop
+for (const item of menu.entries()) {
+  console.log(`${item[0] + 1} : ${item[1]}`);
+}
+
+//? destructuring in for of loop
+for (const [i, el] of menu.entries()) {
+  console.log(`${i} : ${el}`);
+}
+
+//console.log([...menu.entries()]);
+
+*/
