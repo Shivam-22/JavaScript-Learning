@@ -211,4 +211,45 @@ add(...x);
 
 restaurant.orderPizza('mushrrom', 'Onion', 'olives', 'tomatos');
 
+
+//! Short Circuiting
+
+//? They can use any data type, can return any data type, short-circuting
+//? In case of OR operator -
+//? If first value is truthy value then it will immediately retun the first value
+//? If first value is truthy then javascript will not look for another value. else it will look for another value and print if its truthy.
+//?
+
+//Todo : ------ OR ------
+console.log(3 || 'Shivam');
+console.log('Shivam' || 3);
+console.log('' || 0);
+console.log(true || 0);
+console.log(undefined || null); // Both are falsy value
+console.log(undefined || 0 || '' || 'shivam' || 3 || null);
+
+//restaurant.numGuests = 23;
+
+const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guests1);
+
+const guest2 = restaurant.numGuests || 10;
+console.log(guest2);
+
+//Todo : ------ AND ------
+
+//? If first value is falsy value then it will immediately retun the first value without evaluating the second value
+//? If first value is truthy then it  will not look for another value and last value is returned.
+
+console.log(0 && 'Jonas');
+console.log(7 && 'Jonas');
+
+console.log('Hello' && 23 && null && 'jonas');
+
+if (restaurant.orderPizza) {
+  restaurant.orderPizza('mushrooms', 'spinach');
+}
+
+restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
+
 */
