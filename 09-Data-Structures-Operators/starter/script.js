@@ -318,7 +318,6 @@ for (const [i, el] of menu.entries()) {
 
 //console.log([...menu.entries()]);
 
-*/
 
 //! Enhanced object literal
 
@@ -358,15 +357,50 @@ const restaurant1 = {
   orderPasta(ing1, ing2, ing3) {
     console.log(
       `Here is your delicous pasta with ${ing1}, ${ing2} and ${ing3}`
-    );
-  },
-  orderPizza(mainIngredient, ...otherIngredient) {
-    console.log(mainIngredient);
-    console.log(otherIngredient);
-  },
-  // openingHours1: openingHours1, //* old school way
-  //? New ES6 enhanced object literal
-  openingHours1, //* First way
-};
+      );
+    },
+    orderPizza(mainIngredient, ...otherIngredient) {
+      console.log(mainIngredient);
+      console.log(otherIngredient);
+    },
+    // openingHours1: openingHours1, //* old school way
+    //? New ES6 enhanced object literal
+    openingHours1, //* First way
+  };
+  
+  console.log(restaurant1);
+  
+  */
 
-console.log(restaurant1);
+//! Optional  chaining
+// console.log(restaurant.openingHours.mon.open); This will give error. as we are trying to do operation on undefined. so we need to check first as shown below.
+
+if (restaurant.openingHours.mon) console.log(restaurant.openingHours.mon.open);
+
+//More Checks need to be in placed
+if (restaurant.openingHours && restaurant.openingHours.mon) {
+  console.log(restaurant.openingHours.mon.open);
+}
+
+//? Solution is optional chaining
+
+console.log(restaurant.openingHours.mon?.open);
+
+const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+
+for (const day of days) {
+  console.log(day);
+  const open = restaurant.openingHours[day]?.open ?? 'closed';
+  console.log(`On ${day}, we open at ${open}`);
+}
+
+// Methods
+console.log(restaurant.order?.(0, 1) ?? 'Method does not exist');
+
+console.log(restaurant.orderRisato?.(0, 1) ?? 'Method does not exist');
+
+// Arrays
+const users = [{ name: 'Shivam', email: 'shiv@sh.io' }];
+const user1 = [];
+console.log(users[0]?.name ?? 'User array empty');
+console.log(user1[0]?.name ?? 'User1 array empty');
