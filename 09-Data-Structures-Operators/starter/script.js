@@ -370,11 +370,10 @@ const restaurant1 = {
   
   console.log(restaurant1);
   
-  */
-
-//! Optional  chaining
-// console.log(restaurant.openingHours.mon.open); This will give error. as we are trying to do operation on undefined. so we need to check first as shown below.
-
+  
+  //! Optional  chaining
+  // console.log(restaurant.openingHours.mon.open); This will give error. as we are trying to do operation on undefined. so we need to check first as shown below.
+  
 if (restaurant.openingHours.mon) console.log(restaurant.openingHours.mon.open);
 
 //More Checks need to be in placed
@@ -404,3 +403,49 @@ const users = [{ name: 'Shivam', email: 'shiv@sh.io' }];
 const user1 = [];
 console.log(users[0]?.name ?? 'User array empty');
 console.log(user1[0]?.name ?? 'User1 array empty');
+
+
+//! Looping on Object
+
+const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+//* THIRD way of object enhancement
+const openingHours1 = {
+  [weekdays[3]]: {
+    open: 12,
+    close: 22,
+  },
+  [weekdays[4]]: {
+    open: 11,
+    close: 23,
+  },
+  //* can compute anything
+  [weekdays[5]]: {
+    open: 0, // Open 24 hours
+    close: 24,
+  },
+};
+
+// Property NAME
+const properties = Object.keys(openingHours1);
+console.log(properties);
+let openStr = `We are open on ${properties.length} days`;
+
+for (const day of properties) {
+  openStr += ` ${day},`;
+}
+
+console.log(openStr);
+
+// Property VALUES
+const values = Object.values(openingHours1);
+console.log(values);
+
+// Entire Object
+const entries = Object.entries(openingHours1);
+console.log(entries);
+
+for (const [key, { open, close }] of entries) {
+  console.log(`On ${key} we open at ${open} and close at ${close}`);
+}
+
+*/
