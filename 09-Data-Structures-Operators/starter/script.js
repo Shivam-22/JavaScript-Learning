@@ -448,7 +448,6 @@ for (const [key, { open, close }] of entries) {
   console.log(`On ${key} we open at ${open} and close at ${close}`);
 }
 
-*/
 
 //! Sets
 //? It is a collection of unique values, that means it can never have duplicate values
@@ -513,5 +512,72 @@ console.log(staffUniqueArray);
 console.log(
   new Set(['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter']).size
 );
-
+  
 console.log(new Set('Shivam').size);
+  
+*/
+
+//! Maps - Data structure to map values to keys
+
+//? Initialize the Map
+const rest = new Map();
+
+//? Set the map key value
+rest.set('name', 'Classico Italiano');
+rest.set(1, 'Firenze Italy');
+rest.set(2, 'Lisbon Portugal');
+
+console.log(rest);
+
+//? Value and keys can be any type like array, number, boolean
+rest.set('categories', ['Italian', 'Pizzeria', 'Vegetarian', 'Organic']);
+
+console.log(rest);
+
+rest
+  .set('categories', ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'])
+  .set('open', 11)
+  .set('closed', 23)
+  .set(true, 'we are open 😊')
+  .set(false, 'We are closed 😔');
+
+//? We can get retrived value from Map using get.
+console.log(rest);
+console.log(rest.get('name'));
+console.log(rest.get(true));
+console.log(rest.get(1));
+
+const time = 21;
+console.log(rest.get(time > rest.get('open') && time < rest.get('closed')));
+
+//? has property checks if value exist or not
+console.log(rest.has('categories'));
+
+//? delete property delete if key exists
+rest.delete(2);
+console.log(rest);
+
+//? size property returns size of map
+console.log(rest.size);
+
+//? clear property clears the map
+rest.clear();
+console.log(rest.size);
+
+//? we can use arrays or objects as map keys
+rest.set([1, 2], 'test');
+console.log(rest);
+console.log(rest.size);
+//* it will not return the value if we pass array as key.
+//* The reason is its not the same object as the one we pass above.
+console.log(rest.get([1, 2])); //* result: undefined
+
+//* In order to get it work we need to create array variable
+const arr = [1, 2];
+rest.set(arr, 'test');
+console.log(rest);
+console.log(rest.size);
+console.log(rest.get(arr)); //* result: test
+
+rest.set(document.querySelector('h1'), 'Heading');
+console.log(rest);
