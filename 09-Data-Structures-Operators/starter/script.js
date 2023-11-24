@@ -449,3 +449,69 @@ for (const [key, { open, close }] of entries) {
 }
 
 */
+
+//! Sets
+//? It is a collection of unique values, that means it can never have duplicate values
+//? Sets can hold mix data type.
+
+const orderSets = new Set([
+  'Pasta',
+  'Pizza',
+  'Pizza',
+  'Risotto',
+  'Pasta',
+  'Pizza',
+]);
+console.log(orderSets);
+
+//? 1. Values are unique
+//? 2. Order in sets are irrelevant
+
+console.log(new Set('Shivam'));
+
+//? Size of Set
+console.log(orderSets.size);
+
+//? Check if a certain element is in Sets
+console.log(orderSets.has('Pizza'));
+console.log(orderSets.has('Bread'));
+
+//? Add new element to the set
+orderSets.add('Garlic Bread');
+orderSets.add('Garlic Bread');
+
+console.log(orderSets);
+
+//? Delete an element to the set
+orderSets.delete('Risotto');
+console.log(orderSets);
+
+//? Delete all element from the set
+//* orderSets.clear();
+//* console.log(orderSets);
+
+//? Retrieved value from Set -  We cannot get data out of sets
+//? We can just know whether the value is in or not in Set
+
+//? Sets are iterable
+
+for (const order of orderSets) {
+  console.log(order);
+}
+
+//? USE CASE - to remove duplicates.
+const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
+
+const staffUnique = new Set(staff);
+console.log(staffUnique);
+
+//? Convert sets into an Array - Spread operator works on all iterables
+const staffUniqueArray = [...new Set(staff)];
+console.log(staffUniqueArray);
+
+//? Size
+console.log(
+  new Set(['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter']).size
+);
+
+console.log(new Set('Shivam').size);
