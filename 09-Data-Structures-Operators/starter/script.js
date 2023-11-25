@@ -515,7 +515,6 @@ console.log(
   
 console.log(new Set('Shivam').size);
   
-*/
 const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
 const openingHours1 = {
   [weekdays[3]]: {
@@ -635,3 +634,50 @@ console.log(...question);
 console.log(question.entries());
 console.log(question.keys());
 console.log(question.values());
+
+*/
+
+//! Strings
+
+const airline = 'TAP Air Portugal';
+const plane = 'A320';
+
+console.log(plane[0]);
+console.log(plane[1]);
+console.log(plane[2]);
+console.log('B737'[0]);
+
+console.log(airline.length);
+console.log('B737'.length);
+
+console.log(airline.indexOf('r'));
+console.log(airline.lastIndexOf('r'));
+console.log(airline.indexOf('Portugal'));
+console.log(airline.indexOf('portugal')); // case sensetive
+
+console.log(airline.slice(4)); // takes starting index
+//* Do not change the original string.
+//* Strings are non mutable
+//* Store it to some data structure
+
+console.log(airline.slice(4, 7)); // starting index and end index
+
+console.log(airline.slice(0, airline.indexOf(' ')));
+console.log(airline.slice(airline.lastIndexOf(' ') + 1));
+
+console.log(airline.slice(-2));
+console.log(airline.slice(1, -1));
+
+const checkMiddleSeat = function (seat) {
+  // B and E are middle seats
+  const s = seat.slice('-1');
+  if (s === 'B' || s === 'E') {
+    console.log('You got middle seat 😬');
+  } else {
+    console.log('you got lucky 😎');
+  }
+};
+
+checkMiddleSeat('11B');
+checkMiddleSeat('23C');
+checkMiddleSeat('3E');
