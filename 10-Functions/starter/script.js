@@ -95,97 +95,106 @@
 // const greets = greeting => name => console.log(`${greeting} ${name}`);
 // greets('Hi')('shivam');
 
-const lufthansa = {
-  airline: 'lufthansa',
-  iataCode: 'LH',
-  bookings: [],
-  book(flightNum, name) {
-    console.log(
-      `${name} booked a seat on ${this.airline} flight ${this.iataCode}${flightNum}`
-    );
-    this.bookings.push({
-      flight: `${this.iataCode}${flightNum}`,
-      name,
-    });
-  },
-};
+// const lufthansa = {
+//   airline: 'lufthansa',
+//   iataCode: 'LH',
+//   bookings: [],
+//   book(flightNum, name) {
+//     console.log(
+//       `${name} booked a seat on ${this.airline} flight ${this.iataCode}${flightNum}`
+//     );
+//     this.bookings.push({
+//       flight: `${this.iataCode}${flightNum}`,
+//       name,
+//     });
+//   },
+// };
 
-lufthansa.book(239, 'Shivam Deshmukh');
-lufthansa.book(635, 'John Smith');
-console.log(lufthansa);
+// lufthansa.book(239, 'Shivam Deshmukh');
+// lufthansa.book(635, 'John Smith');
+// console.log(lufthansa);
 
-const euroWings = {
-  airline: 'Eurowings',
-  iataCode: 'EW',
-  bookings: [],
-};
+// const euroWings = {
+//   airline: 'Eurowings',
+//   iataCode: 'EW',
+//   bookings: [],
+// };
 
-const swiss = {
-  airline: 'Swiss Air Lines',
-  iataCode: 'LX',
-  bookings: [],
-};
-const book = lufthansa.book;
-//book(23, 'Sarah Williams'); <--- This will throw error as it do not know how this should invoke
+// const swiss = {
+//   airline: 'Swiss Air Lines',
+//   iataCode: 'LX',
+//   bookings: [],
+// };
+// const book = lufthansa.book;
+// //book(23, 'Sarah Williams'); <--- This will throw error as it do not know how this should invoke
 
-//! Call method
-book.call(euroWings, 23, 'Sarah Williams');
-console.log(euroWings);
+// //! Call method
+// book.call(euroWings, 23, 'Sarah Williams');
+// console.log(euroWings);
 
-book.call(lufthansa, 239, 'Mary Cooper');
-console.log(lufthansa);
+// book.call(lufthansa, 239, 'Mary Cooper');
+// console.log(lufthansa);
 
-book.call(swiss, 583, 'Mary Cooper');
-console.log(swiss);
+// book.call(swiss, 583, 'Mary Cooper');
+// console.log(swiss);
 
-//! Apply method - Does not use anymore in modern JavaScript
-const flightData = [583, 'George Cooper'];
-book.apply(swiss, flightData);
-console.log(swiss);
+// //! Apply method - Does not use anymore in modern JavaScript
+// const flightData = [583, 'George Cooper'];
+// book.apply(swiss, flightData);
+// console.log(swiss);
 
-book.call(swiss, ...flightData);
-console.log(swiss);
+// book.call(swiss, ...flightData);
+// console.log(swiss);
 
-//! Bind method
-//book.call(euroWings, 23, 'Sarah Williams');
+// //! Bind method
+// //book.call(euroWings, 23, 'Sarah Williams');
 
-const bookEW = book.bind(euroWings);
-const bookLH = book.bind(lufthansa);
-const bookLX = book.bind(swiss);
+// const bookEW = book.bind(euroWings);
+// const bookLH = book.bind(lufthansa);
+// const bookLX = book.bind(swiss);
 
-bookEW(23, 'Steven Williams');
-console.log(euroWings);
+// bookEW(23, 'Steven Williams');
+// console.log(euroWings);
 
-const bookEW23 = book.bind(euroWings, 23);
-bookEW23('Shivam Deshmukh');
-bookEW23('Martha Cooper');
+// const bookEW23 = book.bind(euroWings, 23);
+// bookEW23('Shivam Deshmukh');
+// bookEW23('Martha Cooper');
 
-//! With Event Listners
-lufthansa.planes = 300;
-lufthansa.buyPlane = function () {
-  console.log(this);
-  this.planes++;
-  console.log(this.planes);
-};
+// //! With Event Listners
+// lufthansa.planes = 300;
+// lufthansa.buyPlane = function () {
+//   console.log(this);
+//   this.planes++;
+//   console.log(this.planes);
+// };
 
-document
-  .querySelector('.buy')
-  .addEventListener('click', lufthansa.buyPlane.bind(lufthansa));
+// document
+//   .querySelector('.buy')
+//   .addEventListener('click', lufthansa.buyPlane.bind(lufthansa));
 
-//! Partial application
+// //! Partial application
 
-const addTax = (rate, value) => value + value * rate;
-console.log(addTax(0.1, 200));
+// const addTax = (rate, value) => value + value * rate;
+// console.log(addTax(0.1, 200));
 
-const addVAT = addTax.bind(null, 0.23);
-console.log(addVAT(100));
+// const addVAT = addTax.bind(null, 0.23);
+// console.log(addVAT(100));
 
-const addTaxRate = function (rate) {
-  return function (value) {
-    return value + value * rate;
-  };
-};
+// const addTaxRate = function (rate) {
+//   return function (value) {
+//     return value + value * rate;
+//   };
+// };
 
-const addVAT2 = addTaxRate(0.23);
-console.log(addVAT2(100));
-console.log(addVAT2(23));
+// const addVAT2 = addTaxRate(0.23);
+// console.log(addVAT2(100));
+// console.log(addVAT2(23));
+
+//// Immediately Invoked Function Expressions (IIFE)
+//! IIFE
+(function () {
+  console.log('This will never run again');
+})();
+
+//! IIFE Arrow Fn
+(() => console.log('This will never run again'))();
