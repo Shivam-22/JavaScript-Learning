@@ -59,21 +59,38 @@
 
 //// Higher Order Functions
 
-const oneWord = function (str) {
-  return str.replace(/ /g, '').toLowerCase();
+// const oneWord = function (str) {
+//   return str.replace(/ /g, '').toLowerCase();
+// };
+
+// const upperFirstWord = function (str) {
+//   const [first, ...others] = str.split(' ');
+//   return [first.toUpperCase(), ...others].join(' ');
+// };
+
+// const transformer = function (str, fn) {
+//   console.log(`Original Str: ${str}`);
+//   console.log(`Transform string: ${fn(str)}`);
+
+//   console.log(`Transformed by: ${fn.name}`);
+// };
+
+// transformer('JavaScript is the best', upperFirstWord);
+// transformer('JavaScript is the best', oneWord);
+
+//// Functions that returns a new FUNCTION
+
+const greet = function (greeting) {
+  return function (name) {
+    console.log(`${greeting} ${name}`);
+  };
 };
 
-const upperFirstWord = function (str) {
-  const [first, ...others] = str.split(' ');
-  return [first.toUpperCase(), ...others].join(' ');
-};
+const greeterHey = greet('Hey');
+console.log(greeterHey);
 
-const transformer = function (str, fn) {
-  console.log(`Original Str: ${str}`);
-  console.log(`Transform string: ${fn(str)}`);
+greeterHey('Shivam');
+greet('Hello')('Shivam Deshmukh');
 
-  console.log(`Transformed by: ${fn.name}`);
-};
-
-transformer('JavaScript is the best', upperFirstWord);
-transformer('JavaScript is the best', oneWord);
+const greets = greeting => name => console.log(`${greeting} ${name}`);
+greets('Hi')('shivam');
