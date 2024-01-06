@@ -80,17 +80,68 @@
 
 //// Functions that returns a new FUNCTION
 
-const greet = function (greeting) {
-  return function (name) {
-    console.log(`${greeting} ${name}`);
-  };
+// const greet = function (greeting) {
+//   return function (name) {
+//     console.log(`${greeting} ${name}`);
+//   };
+// };
+
+// const greeterHey = greet('Hey');
+// console.log(greeterHey);
+
+// greeterHey('Shivam');
+// greet('Hello')('Shivam Deshmukh');
+
+// const greets = greeting => name => console.log(`${greeting} ${name}`);
+// greets('Hi')('shivam');
+
+const lufthansa = {
+  airline: 'lufthansa',
+  iataCode: 'LH',
+  bookings: [],
+  book(flightNum, name) {
+    console.log(
+      `${name} booked a seat on ${this.airline} flight ${this.iataCode}${flightNum}`
+    );
+    this.bookings.push({
+      flight: `${this.iataCode}${flightNum}`,
+      name,
+    });
+  },
 };
 
-const greeterHey = greet('Hey');
-console.log(greeterHey);
+lufthansa.book(239, 'Shivam Deshmukh');
+lufthansa.book(635, 'John Smith');
+console.log(lufthansa);
 
-greeterHey('Shivam');
-greet('Hello')('Shivam Deshmukh');
+const euroWings = {
+  airline: 'Eurowings',
+  iataCode: 'EW',
+  bookings: [],
+};
 
-const greets = greeting => name => console.log(`${greeting} ${name}`);
-greets('Hi')('shivam');
+const swiss = {
+  airline: 'Swiss Air Lines',
+  iataCode: 'LX',
+  bookings: [],
+};
+const book = lufthansa.book;
+//book(23, 'Sarah Williams'); <--- This will throw error as it do not know how this should invoke
+
+//! Call method
+book.call(euroWings, 23, 'Sarah Williams');
+console.log(euroWings);
+
+book.call(lufthansa, 239, 'Mary Cooper');
+console.log(lufthansa);
+
+book.call(swiss, 583, 'Mary Cooper');
+console.log(swiss);
+
+//! Apply method - Does not use anymore in modern JavaScript
+const flightData = [583, 'George Cooper'];
+book.apply(swiss, flightData);
+console.log(swiss);
+
+book.call(swiss, ...flightData);
+console.log(swiss);
